@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../headers/IntArray.h
+iostream
+-
+limits
+-
+
+../headers/fun.h
+IntArray.h
+-
+
+/home/semen/Desktop/some/KPIAP/labs/lab_4/fun.cpp
+IntArray.h
+-
+fun.h
+-
+
