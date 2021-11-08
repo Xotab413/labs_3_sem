@@ -4,7 +4,7 @@ project(lab_5)
 
 
 file(GLOB MY_SRC "src/*")
-include_directories("headers/")
-add_library(lib func.cpp)
 add_executable(app ${MY_SRC})
+include_directories("headers/")
+add_library(lib fun.cpp)
 target_link_libraries(app lib)
