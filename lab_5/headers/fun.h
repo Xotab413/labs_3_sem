@@ -1,7 +1,6 @@
 #ifndef FUNC_H
 #define FUNC_H
 #include "Professor.h"
-
 int checkNum() {
     int num{0};
     while (true) {
@@ -40,16 +39,255 @@ Professor enterOneProfesor() {
 
     return prf;
 }
-bool compAge( Professor left, Professor right) {
-    return left.getAge() < right.getAge(); 
+
+void descAsc() {
+    system("clear");
+    cout << "1 - ascednding " << endl << "2 - descending " << endl << endl;
 }
-void sortProfrs(std::vector<Professor>& pr_v) {
+void menuSort() {
+    system("clear");
+    cout << "1 - Age" << endl
+         << "2 - Salary" << endl
+         << "3 - Grade" << endl
+         << "4 - Course" << endl
+         << "5 - Name" << endl
+         << "6 - Workplace" << endl
+         << "7 - Books" << endl
+         << "other num - exit" << endl
+         << endl;
+}
+
+// COMPARATORS
+bool compAge(Professor left, Professor right) {
+    return left.getAge() < right.getAge();
+}
+bool compSalary(Professor left, Professor right) {
+    return left.getSalary() < right.getSalary();
+}
+bool compGrade(Professor left, Professor right) {
+    return left.getGrade() < right.getGrade();
+}
+bool compCourse(Professor left, Professor right) {
+    return left.getCourse() < right.getCourse();
+}
+bool compName(Professor left, Professor right) {
+    return left.getName() < right.getName();
+}
+bool compWorkpl(Professor left, Professor right) {
+    return left.getWorkpl() < right.getWorkpl();
+}
+bool compBooks(Professor left, Professor right) {
+    return left.getBook() < right.getBook();
+}
+
+bool noTcompSalary(Professor left, Professor right) {
+    return !(left.getSalary() < right.getSalary());
+}
+bool noTcompGrade(Professor left, Professor right) {
+    return !(left.getGrade() < right.getGrade());
+}
+bool noTcompCourse(Professor left, Professor right) {
+    return !(left.getCourse() < right.getCourse());
+}
+bool noTcompName(Professor left, Professor right) {
+    return !(left.getName() < right.getName());
+}
+bool noTcompWorkpl(Professor left, Professor right) {
+    return !(left.getWorkpl() < right.getWorkpl());
+}
+bool noTcompBooks(Professor left, Professor right) {
+    return !(left.getBook() < right.getBook());
+}
+bool noTcompAge(Professor left, Professor right) {
+    return !(left.getAge() < right.getAge());
+}
+
+//--------------------------------------------------
+void findName(const std::vector<Professor>& pr_v) {
+    cout << "Enter finding name" << endl;
+    string name = enterStr();
+    int count{0};
+    for (auto prf : pr_v) {
+        if (prf.getName() == name) {
+            cout << prf << endl;
+            count++;
+        }
+    }
+    if (!count) cout << "Your name is not here 0_0" << endl;
+}
+void findBook(const std::vector<Professor>& pr_v) {
+    cout << "Enter finding Book" << endl;
+    string book = enterStr();
+    int count{0};
+    for (auto prf : pr_v) {
+        if (prf.getBook() == book) {
+            cout << prf << endl;
+            count++;
+        }
+    }
+    if (!count) cout << "Your book is not here 0_0" << endl;
+}
+void findWorkpl(const std::vector<Professor>& pr_v) {
+    cout << "Enter finding Workplace" << endl;
+    string workpl = enterStr();
+    int count{0};
+    for (auto prf : pr_v) {
+        if (prf.getWorkpl() == workpl) {
+            cout << prf << endl;
+            count++;
+        }
+    }
+    if (!count) cout << "Your Workplace is not here 0_0" << endl;
+}
+void findGrade(const std::vector<Professor>& pr_v) {
+    cout << "Enter low&high borders of the range grade" << endl;
+    int low, high = checkNum(), checkNum();
+    int count{0};
+    for (auto prf : pr_v) {
+        if (prf.getGrade() <= high && prf.getGrade() >= low) {
+            cout << prf << endl;
+            count++;
+        }
+    }
+    if (!count)
+        cout << "Your grade is not between << " << low << ".." << high << "0_0"
+             << endl;
+}
+void findCourse(const std::vector<Professor>& pr_v) {
+    cout << "Enter low&high borders of the range Course" << endl;
+    int low, high = checkNum(), checkNum();
+    int count{0};
+    for (auto prf : pr_v) {
+        if (prf.getCourse() <= high && prf.getCourse() >= low) {
+            cout << prf << endl;
+            count++;
+        }
+    }
+    if (!count)
+        cout << "Your course is not between << " << low << ".." << high << "0_0"
+             << endl;
+}
+void findSalary(const std::vector<Professor>& pr_v) {
+    cout << "Enter low&high borders of the range Course" << endl;
+    int low, high = checkNum(), checkNum();
+    int count{0};
+    for (auto prf : pr_v) {
+        if (prf.getSalary() <= high && prf.getSalary() >= low) {
+            cout << prf << endl;
+            count++;
+        }
+    }
+    if (!count)
+        cout << "Your salary is not between << " << low << ".." << high << "0_0"
+             << endl;
+}
+void findAge(const std::vector<Professor>& pr_v) {
+    cout << "Enter low&high borders of the range Course" << endl;
+    int low, high = checkNum(), checkNum();
+    int count{0};
+    for (auto prf : pr_v) {
+        if (prf.getAge() <= high && prf.getAge() >= low) {
+            cout << prf << endl;
+            count++;
+        }
+    }
+    if (!count)
+        cout << "Your age is not between << " << low << ".." << high << "0_0"
+             << endl;
+}
+
+//--------------------------------------------------
+
+void sortProfrs(vector<Professor>& pr_v) {
     system("clear");
     if (pr_v.empty()) {
         cout << "Create at least one Professor" << endl;
         return;
     }
-    std::sort(pr_v.begin(),pr_v.end(),compAge); // by ages
+    menuSort();
+    switch (checkNum()) {
+        case 1:
+            descAsc();
+            switch (checkNum()) {
+                case 1:
+                    std::sort(pr_v.begin(), pr_v.end(), compAge);
+                    break;
+                case 2:
+                    std::sort(pr_v.begin(), pr_v.end(), noTcompAge);
+                    break;
+            }
+            break;
+        case 2:
+            descAsc();
+            switch (checkNum()) {
+                case 1:
+                    std::sort(pr_v.begin(), pr_v.end(), compSalary);
+                    break;
+                case 2:
+                    std::sort(pr_v.begin(), pr_v.end(), noTcompSalary);
+                    break;
+            }
+
+            break;
+        case 3:
+            descAsc();
+            switch (checkNum()) {
+                case 1:
+                    std::sort(pr_v.begin(), pr_v.end(), compGrade);
+                    break;
+                case 2:
+                    std::sort(pr_v.begin(), pr_v.end(), noTcompGrade);
+                    break;
+            }
+            break;
+        case 4:
+            descAsc();
+            switch (checkNum()) {
+                case 1:
+                    std::sort(pr_v.begin(), pr_v.end(), compCourse);
+                    break;
+                case 2:
+                    std::sort(pr_v.begin(), pr_v.end(), noTcompCourse);
+                    break;
+            }
+            break;
+        case 5:
+            descAsc();
+            switch (checkNum()) {
+                case 1:
+                    std::sort(pr_v.begin(), pr_v.end(), compName);
+                    break;
+                case 2:
+                    std::sort(pr_v.begin(), pr_v.end(), noTcompName);
+                    break;
+            }
+            break;
+        case 6:
+            descAsc();
+            switch (checkNum()) {
+                case 1:
+                    std::sort(pr_v.begin(), pr_v.end(), compWorkpl);
+                    break;
+                case 2:
+                    std::sort(pr_v.begin(), pr_v.end(), noTcompWorkpl);
+                    break;
+            }
+            break;
+        case 7:
+            descAsc();
+            switch (checkNum()) {
+                case 1:
+                    std::sort(pr_v.begin(), pr_v.end(), compBooks);
+                    break;
+                case 2:
+                    std::sort(pr_v.begin(), pr_v.end(), noTcompBooks);
+                    break;
+            }
+            break;
+        default:
+            return;
+    }
+    system("clear");
 }
 void prntProfesr(const vector<Professor>& professors) {
     int i{1};
@@ -65,19 +303,55 @@ void prntProfesr(const vector<Professor>& professors) {
              << "--------------------------------" << endl;
     }
 }
+void findProfrs(const std::vector<Professor>& pr_v) {
+    system("clear");
+    if (pr_v.empty()) {
+        cout << "Create at least one Professor" << endl;
+        return;
+    }
+    while (1) {
+        menuSort();
+        switch (checkNum()) {
+            case 1:
+                findAge(pr_v);
+                break;
+            case 2:
+                findSalary(pr_v);
+                break;
+            case 3:
+                findGrade(pr_v);
+                break;
+            case 4:
+                findCourse(pr_v);
+                break;
+            case 5:
+                findName(pr_v);
+                break;
+            case 6:
+                findWorkpl(pr_v);
+                break;
+            case 7:
+                findBook(pr_v);
+                break;
+            default:
+                return;
+        }
+    }
+}
+
 void printMenu() {
     cout << "Hello User (＾▽＾)" << endl
          << "please choose your variant" << endl
          << "1 - add professor" << endl
          << "2 - print all professors" << endl
-         << "3 - sort professor" << endl
-         << "4 - print other classes" << endl
+         << "3 - print other classes" << endl
+         << "4 - sort proffesors" << endl
          << "5 - use Template for Professor" << endl
+         << "6 - find professors" << endl
          << "Oher num - exit" << endl
          << endl;
 }
 void prntOther() {
-
     system("clear");
     GoodSchoolKid gSchKid;
     GradeStudent grS;
@@ -121,17 +395,21 @@ void mainMenu() {
                 printMenu();
                 break;
             case 3:
-                sortProfrs(prf_v);
+                prntOther();
                 printMenu();
                 break;
             case 4:
-                prntOther();
+                sortProfrs(prf_v);
                 printMenu();
                 break;
             case 5:
                 prf_v.clear();
                 prf_v = getTempl();
                 system("clear");
+                printMenu();
+                break;
+            case 6:
+                findProfrs(prf_v);
                 printMenu();
                 break;
             default:
