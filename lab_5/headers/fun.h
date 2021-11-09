@@ -106,6 +106,7 @@ bool noTcompAge(Professor left, Professor right) {
 void findName(const std::vector<Professor>& pr_v) {
     cout << "Enter finding name" << endl;
     string name = enterStr();
+    system("clear");
     int count{0};
     for (auto prf : pr_v) {
         if (prf.getName() == name) {
@@ -118,6 +119,7 @@ void findName(const std::vector<Professor>& pr_v) {
 void findBook(const std::vector<Professor>& pr_v) {
     cout << "Enter finding Book" << endl;
     string book = enterStr();
+    system("clear");
     int count{0};
     for (auto prf : pr_v) {
         if (prf.getBook() == book) {
@@ -130,6 +132,7 @@ void findBook(const std::vector<Professor>& pr_v) {
 void findWorkpl(const std::vector<Professor>& pr_v) {
     cout << "Enter finding Workplace" << endl;
     string workpl = enterStr();
+    system("clear");
     int count{0};
     for (auto prf : pr_v) {
         if (prf.getWorkpl() == workpl) {
@@ -141,7 +144,9 @@ void findWorkpl(const std::vector<Professor>& pr_v) {
 }
 void findGrade(const std::vector<Professor>& pr_v) {
     cout << "Enter low&high borders of the range grade" << endl;
-    int low, high = checkNum(), checkNum();
+    int low = checkNum();
+    int high = checkNum();
+    system("clear");
     int count{0};
     for (auto prf : pr_v) {
         if (prf.getGrade() <= high && prf.getGrade() >= low) {
@@ -150,12 +155,14 @@ void findGrade(const std::vector<Professor>& pr_v) {
         }
     }
     if (!count)
-        cout << "Your grade is not between << " << low << ".." << high << "0_0"
+        cout << "Your grade is not between << " << low << ".." << high << " 0_0"
              << endl;
 }
 void findCourse(const std::vector<Professor>& pr_v) {
     cout << "Enter low&high borders of the range Course" << endl;
-    int low, high = checkNum(), checkNum();
+    int low = checkNum();
+    int high = checkNum();
+    system("clear");
     int count{0};
     for (auto prf : pr_v) {
         if (prf.getCourse() <= high && prf.getCourse() >= low) {
@@ -164,12 +171,14 @@ void findCourse(const std::vector<Professor>& pr_v) {
         }
     }
     if (!count)
-        cout << "Your course is not between << " << low << ".." << high << "0_0"
+        cout << "Your course is not between << " << low << ".." << high << " 0_0"
              << endl;
 }
 void findSalary(const std::vector<Professor>& pr_v) {
     cout << "Enter low&high borders of the range Course" << endl;
-    int low, high = checkNum(), checkNum();
+    int low = checkNum();
+    int high = checkNum();
+    system("clear");
     int count{0};
     for (auto prf : pr_v) {
         if (prf.getSalary() <= high && prf.getSalary() >= low) {
@@ -178,12 +187,14 @@ void findSalary(const std::vector<Professor>& pr_v) {
         }
     }
     if (!count)
-        cout << "Your salary is not between << " << low << ".." << high << "0_0"
+        cout << "Your salary is not between << " << low << ".." << high << " 0_0"
              << endl;
 }
 void findAge(const std::vector<Professor>& pr_v) {
     cout << "Enter low&high borders of the range Course" << endl;
-    int low, high = checkNum(), checkNum();
+    int low = checkNum();
+    int high = checkNum();
+    system("clear");
     int count{0};
     for (auto prf : pr_v) {
         if (prf.getAge() <= high && prf.getAge() >= low) {
@@ -192,7 +203,7 @@ void findAge(const std::vector<Professor>& pr_v) {
         }
     }
     if (!count)
-        cout << "Your age is not between << " << low << ".." << high << "0_0"
+        cout << "Your age is not between << " << low << ".." << high << " 0_0"
              << endl;
 }
 
@@ -309,33 +320,31 @@ void findProfrs(const std::vector<Professor>& pr_v) {
         cout << "Create at least one Professor" << endl;
         return;
     }
-    while (1) {
-        menuSort();
-        switch (checkNum()) {
-            case 1:
-                findAge(pr_v);
-                break;
-            case 2:
-                findSalary(pr_v);
-                break;
-            case 3:
-                findGrade(pr_v);
-                break;
-            case 4:
-                findCourse(pr_v);
-                break;
-            case 5:
-                findName(pr_v);
-                break;
-            case 6:
-                findWorkpl(pr_v);
-                break;
-            case 7:
-                findBook(pr_v);
-                break;
-            default:
-                return;
-        }
+    menuSort();
+    switch (checkNum()) {
+        case 1:
+            findAge(pr_v);
+            break;
+        case 2:
+            findSalary(pr_v);
+            break;
+        case 3:
+            findGrade(pr_v);
+            break;
+        case 4:
+            findCourse(pr_v);
+            break;
+        case 5:
+            findName(pr_v);
+            break;
+        case 6:
+            findWorkpl(pr_v);
+            break;
+        case 7:
+            findBook(pr_v);
+            break;
+        default:
+            return;
     }
 }
 
