@@ -1,11 +1,11 @@
 #ifndef PUPIL_H
 #define PUPIL_H
 
-#include <algorithm>
+
 #include <iostream>
 #include <limits>
-#include <vector>
 using namespace std;
+
 class Pupil {
    protected:
     string m_name;

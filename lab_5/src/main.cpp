@@ -1,4 +1,4 @@
-#include <fun.h>
+void mainMenu();
 
 int main() {
     mainMenu();
