@@ -1,4 +1,4 @@
 ~~# C хедерами что-то не так~~
 
--[X] Fix as soon as possible -_-
+- [X] Fix as soon as possible -_-
 #### Надо было просто ctr в cpp отдельный для каждого класса всунуть
