@@ -8,25 +8,11 @@ class GradeStudent : public Student {
     string m_workpl;
 
    public:
-    GradeStudent(const string, const int, const int, const string);
+    GradeStudent(const string name = "George", const int age = 23,
+                 const int course = 4, const string workplc = "Google");
+    ~GradeStudent();
     string getWorkpl() { return m_workpl; }
     ostream& print(ostream& out) const override;
-    ~GradeStudent();
 };
-
-GradeStudent::GradeStudent(const string name = "George", const int age = 23,
-                           const int course = 4,
-                           const string workplc = "Google")
-    : Pupil(name, age), Student(name, age, course), m_workpl{workplc} {}
-
-GradeStudent::~GradeStudent() {}
-
-ostream& GradeStudent::print(ostream& out) const {
-    out << "Name = " << m_name << endl
-        << "Age = " << m_age << endl
-        << "Course = " << m_course << endl
-        << "Workplace = " << m_workpl << endl;
-    return out;
-}
 
 #endif
