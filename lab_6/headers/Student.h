@@ -8,25 +8,14 @@ class Student : virtual public Pupil {
     int m_course;
 
    public:
-    Student(const string name, const int, const int);
-    int getCourse() { return m_course; }
+    Student(const string name = "Vasya", const int age = 17,
+            const int course = 1);
+    int getCourse() override { return m_course; }
     void setCourse(int course) { m_course = course; }
     virtual ostream& print(ostream& out) const override;
-    string  type() override { return "Student";}
-    ~Student();
+    string type() override { return "Student"; }
+    string getWorkpl() override { return "Not yet)"; }
+    int getGrade() override { return 0; }
+    ~Student() override;
 };
-
-Student::Student(const string name = "Vasya", const int age = 17,
-                 const int course = 1)
-    : Pupil(name, age), m_course{course} {}
-
-Student::~Student() {}
-
-ostream& Student::print(ostream& out) const {
-    out << "Name = " << m_name << endl
-        << "Age = " << m_age << endl
-        << "Course = " << m_course << endl;
-    return out;
-}
-
 #endif
