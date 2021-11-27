@@ -73,7 +73,7 @@ void findSeq(const vector<Set>& set_v) {
         }
     }
     if(is_seq == set_v.size())
-        cout << "Your sequence is not here 0_0" << endl;
+        cout << "Your sequence is not here 0_0." << endl;
 }
 void deleteSet(vector<Set>& set_v) {
     system("clear");
