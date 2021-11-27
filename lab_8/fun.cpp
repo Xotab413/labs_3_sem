@@ -59,16 +59,19 @@ void findSeq(const vector<Set>& set_v) {
         seq[i] = checkNum();
     }
     system("clear");
-    for (auto& st : set_v)
+    int num = 0;
+    for (auto& st : set_v) {
+        num++;
         for(int j = 0; j < st.m_size;j++) {
             if ( seq [j] == st.m_data[j] )
                 cntr++;
             if (cntr == seq_size) {
-                cout << "[" << j+1 << "]: " << st<<endl;
+                cout << "[" << num << "]: " << st<<endl;
                 cntr = 0;
             }
             else is_seq++; 
         }
+    }
     if(is_seq == set_v.size())
         cout << "Your sequence is not here 0_0" << endl;
 }
@@ -144,9 +147,9 @@ inline void printMenu() {
          << "4 - intersection of Sets ∩" << endl
          << "5 - use Template for Sets" << endl
          << "6 - delete Sets" << endl
-        //  << "7 - Delete duplicates" << endl
-        //  << "8 - Copy to posistion" << endl
-        //  << "9 - Find set" << endl
+         << "7 - Delete duplicates" << endl
+         << "8 - Copy to posistion" << endl
+         << "9 - Find set" << endl
          << "228 - Just exception" << endl
          << "Oher num - exit" << endl
          << endl;
