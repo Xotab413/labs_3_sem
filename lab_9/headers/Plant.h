@@ -20,10 +20,17 @@ class Plant {
     }
     Plant(double, string, int);
     Plant(Plant const &plant);
+    string getName() { return m_name; }
+    double getLenght() { return m_lenght;}
+    int getAge() {return m_age; }
+    void setName(const string name) {m_name = name;}
+    void setLenght(const double lenght) {m_lenght = lenght;}
+    void setAge(const int age) {m_age = age;}
     friend ostream& operator<<(ostream& os, const Plant& plant);
     friend istream& operator>>(istream& is, Plant& plant);
     void textMode(const string);
     void binaryMode(const  string);
+    friend bool operator == (const Plant &pl1,const Plant &pl2);
 };
 
 #endif

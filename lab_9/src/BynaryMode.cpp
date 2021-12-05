@@ -3,7 +3,7 @@
 #include "../headers/fun.h"
 #include <cstring>
 
-// WHY i use fcking bufer in wrie&read ?
+// WHY i use fcking bufer in write&read ?
 // because read  https://stackoverflow.com/questions/10873382/write-and-read-string-to-binary-file-c 
 // i have this problem on my Linux (Parrot OS) with g++ 10 version https://yadi.sk/i/aIS_TEZezxyr8A
 // Maybe Windows skip this problem but, it's bad ...
@@ -204,6 +204,15 @@ void Plant::binaryMode(const string path) {
                 
             }
             break;
+            case 6: 
+                DeleteDuplicate();
+                break;
+            case 7:
+                sortBin(path);
+                break;
+            case 8:
+                FindRangeBin(path);
+                break;
             case 0: {
                 f = false;
                 return;

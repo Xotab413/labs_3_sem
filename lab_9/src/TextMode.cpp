@@ -132,6 +132,15 @@ void Plant::textMode(const string path) {
                 fout.close();
                 break;
             }
+            case 6: 
+                DeleteDuplicate();
+                break;
+            case 7:
+                sortTxT(path);
+                break;
+            case 8:
+                FindRangeTxT(path);
+                break;
             case 0:
                 return;
             default:
