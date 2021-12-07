@@ -1,4 +1,0 @@
-/home/semen/Desktop/some/KPIAP/labs/lab_4/build/CMakeFiles/rebuild_cache.dir
-/home/semen/Desktop/some/KPIAP/labs/lab_4/build/CMakeFiles/edit_cache.dir
-/home/semen/Desktop/some/KPIAP/labs/lab_4/build/CMakeFiles/app.dir
-/home/semen/Desktop/some/KPIAP/labs/lab_4/build/CMakeFiles/lib.dir
