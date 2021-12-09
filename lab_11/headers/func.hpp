@@ -59,7 +59,6 @@ void CopyToPosition( vector<Memorial>& memr_v);
 
 // -__-
 inline void printMenu();
-// const vector<Set> getTempl();
 void printMemorial(const vector<Memorial>& memr_v);
 void mainMenu();
 #endif

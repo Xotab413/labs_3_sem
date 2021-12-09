@@ -434,8 +434,8 @@ void printMemorial( const vector<Memorial>& memr_v) {
         return;
     }
     for (auto& st : memr_v) {
-        // cout << "Position - " << i++ << endl
-            cout<< "--------------------------------" << endl
+        cout << "Position - " << i++ << endl
+             << "--------------------------------" << endl
              << st << endl
              << "--------------------------------" << endl;
     }
@@ -474,12 +474,12 @@ inline void printMenu() {
          << "please choose your variant" << endl
          << "1 - create Memorial" << endl
          << "2 - print Memorial" << endl
-        //  << "3 - Delete Memorial " << endl
-        //  << "4 - use Template for Menorials" << endl
-        //  << "5 - sort Memorials" << endl
-        //  << "6 - Delete duplicates" << endl
-        //  << "7 - Copy to posistion" << endl
-        //  << "8 - Find Memorial" << endl
+         << "3 - Delete Memorial " << endl
+         << "4 - use Template for Menorials" << endl
+         << "5 - sort Memorials" << endl
+         << "6 - Delete duplicates" << endl
+         << "7 - Copy to posistion" << endl
+         << "8 - Find Memorial" << endl
          << "Oher num - exit" << endl
          << endl;
 }
@@ -490,7 +490,7 @@ void mainMenu() {
         int chooser{checkNum()};
         switch (chooser) {
             case 1:
-                memr_v.clear();
+
                 memr_v.push_back(enterOneMemorial());
                 system("clear");
                 printMenu();
