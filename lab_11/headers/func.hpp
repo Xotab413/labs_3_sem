@@ -46,7 +46,7 @@ void findHeight( const vector<Memorial>& memr_v);
 void findSquare( const vector<Memorial>& memr_v);
 //--------------------------------------------------
 void sortMemorial(vector<Memorial>& memr_v);
-void findMemorial( const vector<Material>& memr_v);
+void findMemorial( const vector<Memorial>& memr_v);
 
 
 

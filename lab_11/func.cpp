@@ -139,6 +139,46 @@ bool noTcompSquare(Memorial left, Memorial right) {
     return left.archObj->GetSquare() > right.archObj->GetSquare();
 }
 //--------------------------------------------------
+void findMemorial( const vector<Memorial>& memr_v) {
+    system("clear");
+    if (memr_v.empty()) {
+        cout << "Create at least one Professor" << endl;
+        return;
+    }
+    menuSort();
+    switch (checkNum()) {
+        case 1:
+            findName(memr_v);
+            break;
+        case 2:
+            findSurname(memr_v);
+            break;
+        case 3:
+            findCoordinate(memr_v);
+            break;
+        case 4:
+            findTitleMaterial(memr_v);
+            break;
+        case 5:
+            findPriceMaterial(memr_v);
+            break;
+        case 6:
+            findWhom(memr_v);
+            break;
+        case 7:
+            findHonor(memr_v);
+            break;
+        case 8:
+            findHeight(memr_v);
+            break;
+        case 9:
+            findSquare(memr_v);
+            break;
+        default:
+            return;
+    }
+}
+
 // FINDING
 void findName( const vector<Memorial>& memr_v) {
     cout << "Enter finding name" << endl;
@@ -385,45 +425,6 @@ void sortMemorial(vector<Memorial>& memr_v) {
     }
     system("clear");
 }
-// void findMemorial( const vector<Material>& memr_v) {
-//     system("clear");
-//     if (memr_v.empty()) {
-//         cout << "Create at least one Professor" << endl;
-//         return;
-//     }
-//     menuSort();
-//     switch (checkNum()) {
-//         case 1:
-//             findName(memr_v);
-//             break;
-//         case 2:
-//             findSurname(memr_v);
-//             break;
-//         case 3:
-//             findCoordinate(memr_v);
-//             break;
-//         case 4:
-//             findTitleMaterial(memr_v);
-//             break;
-//         case 5:
-//             findPriceMaterial(memr_v);
-//             break;
-//         case 6:
-//             findWhom(memr_v);
-//             break;
-//         case 7:
-//             findHonor(memr_v);
-//             break;
-//         case 8:
-//             findHeight(memr_v);
-//             break;
-//         case 9:
-//             findSquare(memr_v);
-//             break;
-//         default:
-//             return;
-//     }
-// }
 
 void printMemorial( const vector<Memorial>& memr_v) {
     int i{1};
@@ -433,8 +434,8 @@ void printMemorial( const vector<Memorial>& memr_v) {
         return;
     }
     for (auto& st : memr_v) {
-        cout << "Position - " << i++ << endl
-             << "--------------------------------" << endl
+        // cout << "Position - " << i++ << endl
+            cout<< "--------------------------------" << endl
              << st << endl
              << "--------------------------------" << endl;
     }
@@ -471,31 +472,17 @@ void CopyToPosition(vector<Memorial>& memr_v) {
 inline void printMenu() {
     cout << "Hello User (＾▽＾)" << endl
          << "please choose your variant" << endl
-         << "1 - add Memorial" << endl
+         << "1 - create Memorial" << endl
          << "2 - print Memorial" << endl
-         << "3 - Delete Memorial " << endl
-         << "4 - use Template for Menorials" << endl
-         << "5 - sort Memorials" << endl
-         << "6 - Delete duplicates" << endl
-         << "7 - Copy to posistion" << endl
-         << "8 - Find Memorial" << endl
+        //  << "3 - Delete Memorial " << endl
+        //  << "4 - use Template for Menorials" << endl
+        //  << "5 - sort Memorials" << endl
+        //  << "6 - Delete duplicates" << endl
+        //  << "7 - Copy to posistion" << endl
+        //  << "8 - Find Memorial" << endl
          << "Oher num - exit" << endl
          << endl;
 }
-// vector<Set> getTempl() {
-//     int set_1[] {1,2,3,4,5};
-//     int set_2[] {34,563,42,1,3};
-//     int set_3[] {2,52,6,42,0};
-//     int set_4[] {90,80,20,30,40};
-//     int set_5[] {30,60,10,228,993};
-//     vector<Set> tmpl{
-//         Set(set_1,5),
-//         Set(set_2,5),
-//         Set(set_3,5),
-//         Set(set_4,5),
-//         Set(set_5,5)};
-//     return tmpl;
-// }
 void mainMenu() {
     vector<memorial::Memorial> memr_v{};
     printMenu();
@@ -503,6 +490,7 @@ void mainMenu() {
         int chooser{checkNum()};
         switch (chooser) {
             case 1:
+                memr_v.clear();
                 memr_v.push_back(enterOneMemorial());
                 system("clear");
                 printMenu();
@@ -530,7 +518,7 @@ void mainMenu() {
                 printMenu();
                 break;
             case 8:
-                // findMemorial(memr_v);
+                findMemorial(memr_v);
                 printMenu();
                 break;
             default:
