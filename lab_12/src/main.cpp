@@ -40,7 +40,8 @@ int main(int argc, const char * argv[]) {
    std::cout << std::endl << std::endl << "Вывод std::map класса userClass" << std::endl;
    data.Display();
    std::cout << std::endl << std::endl << "Проводятся математические операции над значениями std::map в userClass" << std::endl;
-   data.Operation();
+//    data.Operation(); - use it not for dop
+   data.MathOperation();
    std::cout << "Вывод std::map класса userClass после математических операций" << std::endl << std::endl <<  std::endl;
    data.Display();
    std::cout << std::endl << std::endl << "Запись std::map в UserClass в resultFile.txt" << std::endl;
